@@ -1,0 +1,9 @@
+Task 1  
+Using the example from the following link:  
+https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html  
+Please write a program for a number guessing game. Implement the following changes to the example code:  
+- The upper range of the numbers to guess should be entered by the user.  
+- Move the random number generation, user input, and comparison of the two numbers into three separate functions.
+
+Task 2
+Please modify the code from Task 1 so that the guessing game continues until the user guesses the correct number. Additionally, display the number of attempts the user made to guess the correct number.

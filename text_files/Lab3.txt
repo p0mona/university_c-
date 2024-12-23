@@ -1,0 +1,12 @@
+Task 1 
+Please review the example program from the end of lecture #9 that uses the `TMatrix` class.  
+- Run the program and trace its execution.  
+- Complete the definition of the `TMatrix` class so that it actually stores the matrix data.  
+- Additionally, write the following functions:  
+  - `add` – for adding matrices.  
+  - `mult` – for multiplying matrices.  
+  - Complete the functions:  
+    - `OrphanRandomMatrix` – to generate a random matrix.  
+    - `ComputeDeterminant` – to compute the determinant of the matrix.  
+    - `TakeOverAndProcessMatrix` and `AcceptAndProcessMatrix` – to perform any operations on the matrix.  
+- Use `std::unique_ptr` instead of `std::vector`.

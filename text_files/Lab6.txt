@@ -1,0 +1,77 @@
+Task
+Please write two cooperating programs:  
+1. A **virtual machine** with memory and a stack.  
+2. A **compiler** that translates a simple calculator language with variables into the language of this virtual machine.
+
+**Virtual Machine (10 points)**  
+The machine should have a data memory of size 256 with addresses ranging from 0 to 255, as well as a stack with a maximum height of 256 elements. Both memory cells and stack elements should store double-precision floating-point numbers.  
+The machine loads a program from a given text file, consisting of instructions located on separate lines, and executes it immediately. In case of an error (either in the input program or during execution, e.g., stack overflow), the machine should display an appropriate message.  
+
+**Machine Instructions**:  
+- `LOAD <value>`: Loads `<value>` onto the stack.  
+- `WRITE <address>`: Writes the value from the top of the stack to the memory cell specified by `<address>`.  
+- `READ <address>`: Loads the value from the memory cell specified by `<address>` onto the stack.  
+- `ADD`: Adds the two values at the top of the stack and stores the result on the stack.  
+- `SUB`: Subtracts the two values at the top of the stack and stores the result on the stack.  
+- `MUL`: Multiplies the two values at the top of the stack and stores the result on the stack.  
+- `DIV`: Divides the two values at the top of the stack and stores the result on the stack.  
+
+**Note**: All operations that read from the stack (WRITE, ADD, SUB, MUL, DIV) also pop the values from the stack.  
+After the program is executed, its result will be on the top of the stack and returned as the output of the virtual machine.
+
+**Example program calculating the result of (2+5)*3+1**:  
+```
+LOAD 2  
+LOAD 5  
+ADD # 2+5 on the stack  
+LOAD 3  
+MUL # (2+5)*3 on the stack  
+LOAD 1  
+ADD # (2+5)*3+1 on the stack  
+```
+
+---
+
+**Compiler (15 points)**  
+The compiler program should read the code written in the calculator language and translate it into virtual machine instructions. The translated program in the virtual machine language should be saved to an output file. In case of an error in the input program, the compiler should display an appropriate message.  
+
+**Calculator language syntax in EBNF notation**:  
+```
+program = { statement } ;
+statement = variable_declaration | expression ;
+variable_declaration = variable, "=", expression ;
+expression = term { ( "+" | "-" ) term } ;
+term = factor { ( "*" | "/" ) factor } ;
+factor = number | variable | "(", expression, ")" ;
+variable = letter { letter | digit } ;
+number = [ "-" ], integer_part, [ ".", fractional_part ] ;
+integer_part = digit, { digit } ;
+fractional_part = digit, { digit } ;
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+letter = "a" | "b" | "c" | ... | "z" | "A" | "B" | "C" | ... | "Z" ;
+```
+
+**Example program in the calculator language**:  
+```
+x = 2  
+y = 3  
+z = 7  
+(x + y) * z  
+```
+
+**Its translation into the virtual machine language**:  
+```
+LOAD 2 # x  
+WRITE 0  
+LOAD 3 # y  
+WRITE 1  
+LOAD 7 # z  
+WRITE 2 # store x at address 0  
+# store y at address 1  
+# store z at address 2  
+READ 0 # load x  
+READ 1 # load y  
+ADD # x + y on the stack  
+READ 2 # load z  
+MUL # (x + y) * z on the stack  
+```

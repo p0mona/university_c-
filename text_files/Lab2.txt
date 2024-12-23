@@ -1,0 +1,13 @@
+Task 1  
+Write a program that converts decimal values to hexadecimal, octal, binary, or BCD.  
+- The program should be executed from the command line.  
+- The first parameter passed to the program should be the decimal value to convert.  
+- The second parameter should be a code specifying the type of conversion (`hex`, `oct`, `bin`, `bcd`).  
+
+Task 2
+Write a function to copy files using a buffer.  
+- The function should accept three parameters: the name of the source file, the name of the destination file, and the buffer size.  
+- The default buffer size should be 256 bytes.  
+- Implement the function in two versions:  
+  1. Using the `std::vector` class.  
+  2. Using `std::unique_ptr`.

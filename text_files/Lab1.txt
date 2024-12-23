@@ -1,0 +1,10 @@
+Task 1 
+Please write three functions that convert an angle value given in degrees to radians.  
+- The first function should use pass-by-value parameters.  
+- The second function should use pass-by-reference parameters.  
+- The third function should use pointer parameters.  
+
+Also, write test code that demonstrates the functionality of these functions.  
+
+Task 2 
+Please write a function implementing quicksort that uses pointers to pass parameters to the function.  

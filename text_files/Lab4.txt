@@ -1,0 +1,11 @@
+Task 1  
+Please extend the example of the factory method from lecture #10 so that it demonstrates object creation for an additional class `F` that inherits from class `B`.  
+
+Task 2
+Please create a class for a doubly linked queue (`Deque`) that will store objects of type `String` and have the following methods:  
+- `addFirst(e)` – to add an element at the front of the deque.  
+- `removeFirst()` – to remove the element from the front of the deque.  
+- `getFirst()` – to return the element at the front of the deque.  
+- `addLast(e)` – to add an element at the end of the deque.  
+- `removeLast()` – to remove the element from the end of the deque.  
+- `getLast()` – to return the element at the end of the deque.
